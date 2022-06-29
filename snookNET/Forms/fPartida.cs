@@ -269,101 +269,7 @@ namespace snookNET.Forms
             }
         }
 
-        /*
-        private void btAmarilla1_Click(object sender, EventArgs e)
-        {
-            if (!ComprobarPlayers()) return;
-            if (this.Epuntos.PlayerActivo == 1)
-                this.Epuntos.PuntosPlayer1 += Epuntos.Amarilla;
-            else
-                this.Epuntos.PuntosPlayer2 += Epuntos.Amarilla;
-            this.btAmarilla1.Enabled = this.Epuntos.RojasEmbocadas < 15;
-            if (!this.btAmarilla1.Enabled)
-            {
-                this.Epuntos.ColoresEmbocadas++;
-                this.Epuntos.PuntosRestantes -= 2;
-            }
-            PonPuntos();
-        }
-        private void btVerde1_Click(object sender, EventArgs e)
-        {
-            if (!ComprobarPlayers()) return;
-            if (this.Epuntos.PlayerActivo == 1)
-                this.Epuntos.PuntosPlayer1 += Epuntos.Verde;
-            else
-                this.Epuntos.PuntosPlayer2 += Epuntos.Verde;
-            this.btVerde1.Enabled = this.Epuntos.RojasEmbocadas < 15;
-            if (!this.btVerde1.Enabled)
-            {
-                this.Epuntos.ColoresEmbocadas++;
-                this.Epuntos.PuntosRestantes -= 3;
-            }
-
-                PonPuntos();
-        }
-        private void btMarron1_Click(object sender, EventArgs e)
-        {
-            if (!ComprobarPlayers()) return;
-            if (this.Epuntos.PlayerActivo == 1)
-                this.Epuntos.PuntosPlayer1 += Epuntos.Marron;
-            else
-                this.Epuntos.PuntosPlayer2 += Epuntos.Marron;
-            this.btMarron1.Enabled = this.Epuntos.RojasEmbocadas < 15;
-            if (!this.btMarron1.Enabled)
-            {
-                this.Epuntos.ColoresEmbocadas++;
-                this.Epuntos.PuntosRestantes -= 4;
-            }
-                PonPuntos();
-        }
-        private void btAzul1_Click(object sender, EventArgs e)
-        {
-            if (!ComprobarPlayers()) return;
-            if (this.Epuntos.PlayerActivo == 1)
-                this.Epuntos.PuntosPlayer1 += Epuntos.Azul;
-            else
-                this.Epuntos.PuntosPlayer2 += Epuntos.Azul;
-            this.btAzul1.Enabled = this.Epuntos.RojasEmbocadas < 15;
-            if (!this.btAzul1.Enabled)
-            {
-                this.Epuntos.ColoresEmbocadas++;
-                this.Epuntos.PuntosRestantes -= 5;
-            }
-
-                PonPuntos();
-        }
-        private void btRosa1_Click(object sender, EventArgs e)
-        {
-            if (!ComprobarPlayers()) return;
-            if (this.Epuntos.PlayerActivo == 1)
-                this.Epuntos.PuntosPlayer1 += Epuntos.Rosa;
-            else
-                this.Epuntos.PuntosPlayer2 += Epuntos.Rosa;
-            this.btRosa1.Enabled = this.Epuntos.RojasEmbocadas < 15;
-            if (!this.btRosa1.Enabled)
-            {
-                this.Epuntos.ColoresEmbocadas++;
-                this.Epuntos.PuntosRestantes -= 6;
-            }
-                PonPuntos();
-        }
-        private void btNegra1_Click(object sender, EventArgs e)
-        {
-            if (!ComprobarPlayers()) return;
-            if (this.Epuntos.PlayerActivo == 1)
-            this.Epuntos.PuntosPlayer1 += Epuntos.Negra;
-            else
-                this.Epuntos.PuntosPlayer2 += Epuntos.Negra;
-                this.btNegra1.Enabled = this.Epuntos.RojasEmbocadas < 15;
-            if (!this.btNegra1.Enabled) 
-            { 
-                this.Epuntos.ColoresEmbocadas++;
-                this.Epuntos.PuntosRestantes -= 7;
-            }
-            PonPuntos();
-        }
-        */
-
+      
         private void btFinFrame_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("¿Seguro?", "Finalizar Frame", MessageBoxButtons.YesNo);
@@ -409,7 +315,9 @@ namespace snookNET.Forms
             this.btNegra1.Enabled = true;
             PonPuntos();
             this.Epuntos.BolaAnterior = 'C';
+            this.Epuntos.ColorBola = string.Empty;
             this.txListaEmboques.Text = string.Empty;
+            this.LPuntos.Clear();
 
             MessageBox.Show(TextoMensaje, "Finalizar Frame", MessageBoxButtons.OK);
         }
