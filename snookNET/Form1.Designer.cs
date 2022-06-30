@@ -174,6 +174,7 @@
             this.btnHistorial.TabIndex = 4;
             this.btnHistorial.Text = "Historial";
             this.btnHistorial.UseVisualStyleBackColor = true;
+            this.btnHistorial.Visible = false;
             // 
             // panel2
             // 
