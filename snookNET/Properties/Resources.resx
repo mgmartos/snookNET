@@ -142,14 +142,20 @@
   <data name="groupbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\groupbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PuntosCircle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\PuntosCircle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="aspa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\aspa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Minimiza" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Minimiza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Izquierda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Izquierda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BolaNegra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\BolaNegra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PuntosCircle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\PuntosCircle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,6 +181,9 @@
   <data name="PuntosCircle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\PuntosCircle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Herramienta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Herramienta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="gear1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\gear.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,8 +193,8 @@
   <data name="gear2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\gear.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BolaNegra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\BolaNegra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Minimiza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Minimiza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BolaAmarilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\BolaAmarilla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,7 +220,7 @@
   <data name="BolaVerde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\BolaVerde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Herramienta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Herramienta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="derecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\derecha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

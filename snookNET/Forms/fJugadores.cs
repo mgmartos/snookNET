@@ -35,7 +35,9 @@ namespace snookNET.Forms
         private void btEliminar_Click(object sender, EventArgs e)
         {
             int posicion = this.lvJugadores.SelectedIndices[0];
+            string texto = this.lvJugadores.Items[posicion].ToString();
             this.lvJugadores.Items.RemoveAt(posicion);
+            this.txJugador.Text = texto;
         }
 
         private void fJugadores_Load(object sender, EventArgs e)
@@ -70,6 +72,11 @@ namespace snookNET.Forms
         private void btSalvar_Click(object sender, EventArgs e)
         {
             Salvar();
+        }
+
+        private void JuegaPlayer2_Click(object sender, EventArgs e)
+        {
+            btAgregar_Click(sender, e);
         }
     }
 }

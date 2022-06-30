@@ -193,6 +193,16 @@ namespace snookNET.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap derecha {
+            get {
+                object obj = ResourceManager.GetObject("derecha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FlechaDerecha {
             get {
                 object obj = ResourceManager.GetObject("FlechaDerecha", resourceCulture);
@@ -253,9 +263,29 @@ namespace snookNET.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Guardar {
+            get {
+                object obj = ResourceManager.GetObject("Guardar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Herramienta {
             get {
                 object obj = ResourceManager.GetObject("Herramienta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Izquierda {
+            get {
+                object obj = ResourceManager.GetObject("Izquierda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
