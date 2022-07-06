@@ -351,7 +351,7 @@ namespace snookNET.Forms
         }
 
 
-        private void AgregarPaso()
+        private void AgregarPaso(bool atras=false)
         {
             Entities.Puntos ep = new Entities.Puntos();
             ep.PuntosPlayer1 = this.Epuntos.PuntosPlayer1;
@@ -366,7 +366,7 @@ namespace snookNET.Forms
             ep.ColoresEmbocadas = this.Epuntos.ColoresEmbocadas;
             ep.BolaAnterior = this.Epuntos.BolaAnterior;
             ep.ColorBola = this.Epuntos.ColorBola;
-            this.LPuntos.Add(ep);
+            if (!atras) this.LPuntos.Add(ep);
             
             int fin = this.LPuntos.Count;
             int inicio = fin - 25;
@@ -411,6 +411,48 @@ namespace snookNET.Forms
                 CLogger.serilogLogger.Error("Creación fichero Json ");
                 CLogger.serilogLogger.Error(ex.ToString());
             }
+        }
+
+        private void txListaEmboques_MouseDown(object sender, MouseEventArgs e)
+        {
+            int charIndex = txListaEmboques.GetCharIndexFromPosition(e.Location);
+            int line = txListaEmboques.GetLineFromCharIndex(charIndex);
+
+            List<string> lista = txListaEmboques.Text.Split("\r\n").ToList();
+            string tanteo = lista[line].ToString().Substring(lista[line].ToString().IndexOf('-')+1);
+            List<string> tantos = tanteo.Split(':').ToList();
+            int FinLista = -1;
+            int tantos1 = Convert.ToInt16((string)tantos[0]);
+            int tantos2 = Convert.ToInt16((string)tantos[1]);
+            for (int i=0;i<this.LPuntos.Count;i++)
+            {
+                if ((this.LPuntos[i].PuntosPlayer1 == tantos1) && (this.LPuntos[i].PuntosPlayer2 == tantos2))
+                    {
+                    FinLista = i;
+                    break;
+                    }
+            }
+            if (FinLista >= 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("¿Volver al punto seleccionado?", "Historial de Tantos", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+
+                    this.LPuntos.RemoveRange(FinLista + 1, this.LPuntos.Count - FinLista -1);
+               
+                this.Epuntos = this.LPuntos[this.LPuntos.Count - 1];
+                CLogger.serilogLogger.Information("Paso Muuuy atrás");
+                string player = this.Epuntos.PlayerActivo == 1 ? this.NamePlayer1.Text : this.NamePlayer2.Text;
+                CLogger.serilogLogger.Information(player + " - " + this.Epuntos.PuntosPlayer1 + " - " + this.Epuntos.PuntosPlayer2);
+                this.JuegaPlayer1.Visible = Epuntos.PlayerActivo == 1;
+                this.JuegaPlayer2.Visible = Epuntos.PlayerActivo == 2;
+                PonPuntos();
+                AgregarPaso(true);
+                }
+            }
+
+
+    //MessageBox.Show("Click on line=" + line + ", Text=" + txListaEmboques.Lines(line))
         }
     }
 }

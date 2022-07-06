@@ -16,6 +16,7 @@ namespace snookNET.Forms
     public partial class fJugadores : Form
     {
         private List<string> listaJugadores = new List<string>();
+
         public fJugadores()
         {
 
@@ -61,11 +62,19 @@ namespace snookNET.Forms
         }
         private void Salvar()
         {
+            try
+            { 
             string sJson = JsonSerializer.Serialize(this.lvJugadores.Items);
             int l = sJson.Length;
             string name = "Jugadores.json";
             System.IO.File.WriteAllText(name, sJson);
+            MessageBox.Show("Lista de jugadores guardada.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se ha podido guardar la lista de jugadores.");
 
+            }
 
         }
 
@@ -77,6 +86,16 @@ namespace snookNET.Forms
         private void JuegaPlayer2_Click(object sender, EventArgs e)
         {
             btAgregar_Click(sender, e);
+        }
+
+        private void pbGuardar_MouseEnter(object sender, EventArgs e)
+        {
+            this.pbGuardar.Image = global::snookNET.Properties.Resources.Guardar_click;
+        }
+
+        private void pbGuardar_MouseLeave(object sender, EventArgs e)
+        {
+            this.pbGuardar.Image = global::snookNET.Properties.Resources.Guardar;
         }
     }
 }

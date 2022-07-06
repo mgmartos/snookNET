@@ -533,6 +533,7 @@
             this.txListaEmboques.Name = "txListaEmboques";
             this.txListaEmboques.Size = new System.Drawing.Size(307, 714);
             this.txListaEmboques.TabIndex = 32;
+            this.txListaEmboques.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txListaEmboques_MouseDown);
             // 
             // fPartida
             // 

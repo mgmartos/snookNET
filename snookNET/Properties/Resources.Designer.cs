@@ -273,6 +273,16 @@ namespace snookNET.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Guardar_click {
+            get {
+                object obj = ResourceManager.GetObject("Guardar_click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Herramienta {
             get {
                 object obj = ResourceManager.GetObject("Herramienta", resourceCulture);

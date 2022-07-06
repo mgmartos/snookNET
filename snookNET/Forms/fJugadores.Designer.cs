@@ -108,6 +108,7 @@
             // 
             // pbGuardar
             // 
+            this.pbGuardar.ErrorImage = global::snookNET.Properties.Resources.Guardar_click;
             this.pbGuardar.Image = global::snookNET.Properties.Resources.Guardar;
             this.pbGuardar.Location = new System.Drawing.Point(918, 346);
             this.pbGuardar.Name = "pbGuardar";
@@ -116,6 +117,8 @@
             this.pbGuardar.TabIndex = 26;
             this.pbGuardar.TabStop = false;
             this.pbGuardar.Click += new System.EventHandler(this.btSalvar_Click);
+            this.pbGuardar.MouseEnter += new System.EventHandler(this.pbGuardar_MouseEnter);
+            this.pbGuardar.MouseLeave += new System.EventHandler(this.pbGuardar_MouseLeave);
             // 
             // fJugadores
             // 
