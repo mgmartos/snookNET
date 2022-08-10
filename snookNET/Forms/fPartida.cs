@@ -380,11 +380,27 @@ namespace snookNET.Forms
             
 
         }
+
+        private void CargaEpuntos(Puntos puntos)
+        {
+            this.Epuntos.PuntosPlayer1 = puntos.PuntosPlayer1;
+            this.Epuntos.PuntosPlayer2 = puntos.PuntosPlayer2;
+            this.Epuntos.FramesPlayer1 = puntos.FramesPlayer1;
+            this.Epuntos.FramesPlayer2 = puntos.FramesPlayer2;
+            this.Epuntos.PuntosRestantes = puntos.PuntosRestantes;
+            this.Epuntos.Diferencia = puntos.Diferencia;
+            this.Epuntos.PlayerActivo = puntos.PlayerActivo;
+            this.Epuntos.RojasEmbocadas = puntos.RojasEmbocadas;
+            this.Epuntos.ColoresEmbocadas = puntos.ColoresEmbocadas;
+            this.Epuntos.BolaAnterior = puntos.BolaAnterior;
+            this.Epuntos.ColorBola = puntos.ColorBola;
+        }
+
         private void btAtras_Click(object sender, EventArgs e)
         {
             if (this.LPuntos.Count > 1)
             {
-                this.Epuntos = this.LPuntos[this.LPuntos.Count - 2];
+                CargaEpuntos(this.LPuntos[this.LPuntos.Count - 2]);
                 CLogger.serilogLogger.Information("Paso atrás");
                 string player = this.Epuntos.PlayerActivo == 1 ? this.NamePlayer1.Text : this.NamePlayer2.Text;
                 CLogger.serilogLogger.Information(player + " - " + this.Epuntos.PuntosPlayer1 + " - " + this.Epuntos.PuntosPlayer2);
@@ -440,7 +456,7 @@ namespace snookNET.Forms
 
                     this.LPuntos.RemoveRange(FinLista + 1, this.LPuntos.Count - FinLista -1);
                
-                this.Epuntos = this.LPuntos[this.LPuntos.Count - 1];
+                CargaEpuntos(this.LPuntos[this.LPuntos.Count - 1]);
                 CLogger.serilogLogger.Information("Paso Muuuy atrás");
                 string player = this.Epuntos.PlayerActivo == 1 ? this.NamePlayer1.Text : this.NamePlayer2.Text;
                 CLogger.serilogLogger.Information(player + " - " + this.Epuntos.PuntosPlayer1 + " - " + this.Epuntos.PuntosPlayer2);

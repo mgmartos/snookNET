@@ -511,6 +511,7 @@
             this.btAtras.TabIndex = 30;
             this.btAtras.Text = "Atrás";
             this.btAtras.UseVisualStyleBackColor = true;
+            this.btAtras.Visible = false;
             this.btAtras.Click += new System.EventHandler(this.btAtras_Click);
             // 
             // btJson
