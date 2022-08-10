@@ -345,13 +345,14 @@ namespace snookNET.Forms
                 this.Epuntos.PuntosPlayer1 += puntos;
 
             PonPuntos();
+            AgregarFalta(puntos);
             string player = this.Epuntos.PlayerActivo == 1 ? this.NamePlayer1.Text : this.NamePlayer2.Text;
             CLogger.serilogLogger.Information("Falta " + puntos.ToString()  + " " + player + " - " + this.Epuntos.PuntosPlayer1 + " - " + this.Epuntos.PuntosPlayer2);
 
         }
 
 
-        private void AgregarPaso(bool atras=false)
+        private void AgregarPaso(bool atras = false)
         {
             Entities.Puntos ep = new Entities.Puntos();
             ep.PuntosPlayer1 = this.Epuntos.PuntosPlayer1;
@@ -367,18 +368,50 @@ namespace snookNET.Forms
             ep.BolaAnterior = this.Epuntos.BolaAnterior;
             ep.ColorBola = this.Epuntos.ColorBola;
             if (!atras) this.LPuntos.Add(ep);
-            
+
             int fin = this.LPuntos.Count;
             int inicio = fin - 25;
             inicio = inicio < 0 ? 0 : inicio;
             this.txListaEmboques.Text = String.Empty;
-            for (int i = inicio; i < fin; i++)
+            if (this.LPuntos.Count > 0)
             {
-                string nombre = this.LPuntos[i].PlayerActivo == 1 ? this.NamePlayer1.Text : NamePlayer2.Text;
-                this.txListaEmboques.Text += nombre + " " + this.LPuntos[i].ColorBola.ToString() + " - " + this.LPuntos[i].PuntosPlayer1 + ":" + this.LPuntos[i].PuntosPlayer2 + Environment.NewLine;
+                for (int i = inicio; i < fin; i++)
+                {
+                    string nombre = this.LPuntos[i].PlayerActivo == 1 ? this.NamePlayer1.Text : NamePlayer2.Text;
+                    this.txListaEmboques.Text += nombre + " " + this.LPuntos[i].ColorBola.ToString() + " - " + this.LPuntos[i].PuntosPlayer1 + ":" + this.LPuntos[i].PuntosPlayer2 + Environment.NewLine;
+                }
             }
-            
+        }
+        private void AgregarFalta(int puntos)
+        {
+            Entities.Puntos ep = new Entities.Puntos();
+            ep.PuntosPlayer1 = this.Epuntos.PuntosPlayer1;
+            ep.PuntosPlayer2 = this.Epuntos.PuntosPlayer2;
+            ep.FramesPlayer1 = this.Epuntos.FramesPlayer2;
+            ep.FramesPlayer2 = this.Epuntos.FramesPlayer2;
 
+            ep.Diferencia = this.Epuntos.Diferencia;
+            ep.PuntosRestantes = this.Epuntos.PuntosRestantes;
+            ep.PlayerActivo = this.Epuntos.PlayerActivo;
+            ep.RojasEmbocadas = this.Epuntos.RojasEmbocadas;
+            ep.ColoresEmbocadas = this.Epuntos.ColoresEmbocadas;
+            ep.BolaAnterior = this.Epuntos.BolaAnterior;
+            ep.ColorBola = "Falta " + puntos.ToString() + " p. ";
+            this.LPuntos.Add(ep);
+
+            int fin = this.LPuntos.Count;
+            int inicio = fin - 25;
+            inicio = inicio < 0 ? 0 : inicio;
+
+            this.txListaEmboques.Text = String.Empty;
+            if (this.LPuntos.Count > 0)
+            {
+                for (int i = inicio; i < fin; i++)
+                {
+                    string nombre = this.LPuntos[i].PlayerActivo == 1 ? this.NamePlayer1.Text : NamePlayer2.Text;
+                        this.txListaEmboques.Text += nombre + " " + this.LPuntos[i].ColorBola.ToString() + " - " + this.LPuntos[i].PuntosPlayer1 + ":" + this.LPuntos[i].PuntosPlayer2 + Environment.NewLine;
+                }
+            }
         }
 
         private void CargaEpuntos(Puntos puntos)
@@ -469,6 +502,40 @@ namespace snookNET.Forms
 
 
     //MessageBox.Show("Click on line=" + line + ", Text=" + txListaEmboques.Lines(line))
+        }
+
+        private void pbSupernumerario_Click(object sender, EventArgs e)
+        {
+            if (((MouseEventArgs)e).Button == MouseButtons.Left)
+                
+                {
+                    if (this.Epuntos.RojasEmbocadas < 15)
+                    {
+                        this.Epuntos.RojasEmbocadas++;
+                        this.Epuntos.PuntosRestantes -= 8;
+                        this.lblPendientes.Text = this.Epuntos.PuntosRestantes.ToString();
+                    }
+                }
+                else 
+                { 
+                    if (this.Epuntos.RojasEmbocadas > 0)
+                    {
+                        this.Epuntos.RojasEmbocadas--;
+                        this.Epuntos.PuntosRestantes += 8;
+                        this.lblPendientes.Text = this.Epuntos.PuntosRestantes.ToString();
+                    }
+                }
+        }
+        
+
+        private void pbSupernumerario_DoubleClick(object sender, EventArgs e)
+        {
+            if (this.Epuntos.RojasEmbocadas > 0)
+            {
+                this.Epuntos.RojasEmbocadas--;
+                this.Epuntos.PuntosRestantes += 8;
+                this.lblPendientes.Text = this.Epuntos.PuntosRestantes.ToString();
+            }
         }
     }
 }

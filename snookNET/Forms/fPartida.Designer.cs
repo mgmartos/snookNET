@@ -32,6 +32,7 @@
             this.cbPlayer1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pbSupernumerario = new System.Windows.Forms.PictureBox();
             this.pbFalta7 = new System.Windows.Forms.PictureBox();
             this.pbFalta6 = new System.Windows.Forms.PictureBox();
             this.pbFalta5 = new System.Windows.Forms.PictureBox();
@@ -64,6 +65,7 @@
             this.txListaEmboques = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSupernumerario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFalta7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFalta6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFalta5)).BeginInit();
@@ -121,16 +123,29 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pbSupernumerario);
             this.groupBox2.Controls.Add(this.pbFalta7);
             this.groupBox2.Controls.Add(this.pbFalta6);
             this.groupBox2.Controls.Add(this.pbFalta5);
             this.groupBox2.Controls.Add(this.pbFalta4);
             this.groupBox2.Location = new System.Drawing.Point(26, 157);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(218, 85);
+            this.groupBox2.Size = new System.Drawing.Size(419, 85);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Falta";
+            // 
+            // pbSupernumerario
+            // 
+            this.pbSupernumerario.Image = global::snookNET.Properties.Resources.BolaRoja;
+            this.pbSupernumerario.Location = new System.Drawing.Point(291, 41);
+            this.pbSupernumerario.Name = "pbSupernumerario";
+            this.pbSupernumerario.Size = new System.Drawing.Size(25, 25);
+            this.pbSupernumerario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSupernumerario.TabIndex = 4;
+            this.pbSupernumerario.TabStop = false;
+            this.pbSupernumerario.Click += new System.EventHandler(this.pbSupernumerario_Click);
+            this.pbSupernumerario.DoubleClick += new System.EventHandler(this.pbSupernumerario_DoubleClick);
             // 
             // pbFalta7
             // 
@@ -564,6 +579,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbSupernumerario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFalta7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFalta6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFalta5)).EndInit();
@@ -611,5 +627,6 @@
         private System.Windows.Forms.Button btAtras;
         private System.Windows.Forms.Button btJson;
         private System.Windows.Forms.TextBox txListaEmboques;
+        private System.Windows.Forms.PictureBox pbSupernumerario;
     }
 }
