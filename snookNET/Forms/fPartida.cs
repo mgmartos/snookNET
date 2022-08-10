@@ -536,6 +536,7 @@ namespace snookNET.Forms
                 this.Epuntos.PuntosRestantes += 8;
                 this.lblPendientes.Text = this.Epuntos.PuntosRestantes.ToString();
             }
+            //No se contabilizan puntos, pero se resta una bola roja de las restantes.
         }
     }
 }
